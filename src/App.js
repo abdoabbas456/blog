@@ -5,20 +5,12 @@ import { Router } from "@reach/router";
 import Details from "./detials";
 import ThemeContext from "./ThemeContext";
 import NavBar from "./Navbar";
-
+import Home from "./component/home"
 const App = () => {
-  const themeHook = useState("darkblue");
+ 
 
   return (
-    <ThemeContext.Provider value={themeHook}>
-      <div>
-       <NavBar></NavBar>
-        <Router>
-          <SearchParams path="/" />
-          <Details path="/details/:id" />
-        </Router>
-      </div>
-    </ThemeContext.Provider>
+   <Home/>
   );
 };
 ReactDOM.render(<App />, document.getElementById("root"));
