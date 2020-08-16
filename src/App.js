@@ -5,12 +5,12 @@ import { Router } from "@reach/router";
 import Details from "./detials";
 import ThemeContext from "./ThemeContext";
 import NavBar from "./Navbar";
-import Home from "./component/home"
+import Main from "./component/main"
 const App = () => {
  
 
   return (
-   <Home/>
+   <Main/>
   );
 };
 ReactDOM.render(<App />, document.getElementById("root"));
