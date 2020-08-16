@@ -28,8 +28,7 @@ main {
   margin: auto;
   padding: 2rem 0rem;
   z-index: 2;
-  position: relative ,
-  
+  position: relative;
 }
 .line1,
 .line2 {
@@ -74,25 +73,19 @@ main {
 }
 
 .fashion-span {
-  color: rgb(255, 139, 93);
-}
-.mountain-span {
   color: rgb(86, 124, 228);
 }
 
-.hike-span {
-  color: rgb(167, 110, 231);
-}
 .hero-desc h2 {
   font-family: "Abril Fatface";
   font-size: 5rem;
-
 }
 .hero-desc p {
-  padding: 2rem 0rem;
-  font-size: 1.5rem;
+  padding: 1rem 1rem;
+  font-size: 1.7rem;
   color: rgb(223, 223, 223);
   font-family: "Scheherazade";
+  align-self: start;
 }
 .explore {
   padding: 1rem 2rem;
@@ -117,8 +110,8 @@ main {
   align-items: center;
   z-index: 1;
   opacity: 1;
-   clip-path: circle(50px at 100% -10%); 
-   -webkit-clip-path: circle(50px at 100% -10%); 
+  clip-path: circle(50px at 100% -10%);
+  -webkit-clip-path: circle(50px at 100% -10%);
 }
 .burger {
   cursor: pointer;
@@ -126,19 +119,19 @@ main {
 .nav-links {
   font-size: 3rem;
   flex-basis: 30rem;
+  font-weight: bold;
 }
 .nav-links h3 {
-  padding: 3rem 0rem;
+  padding: 4rem 0rem;
 }
 .contact {
   flex-basis: 30rem;
-  
 }
 .contact h2 {
   font-size: 3rem;
   padding: 2rem 0rem;
 }
-.social  h1{
+.social h1 {
   display: inline;
   font-size: 1.5rem;
   line-height: 2rem;
@@ -157,15 +150,6 @@ main {
   top: -15%;
 }
 
-.t-swipe1 {
-  background: rgb(86, 124, 228);
-}
-.t-swipe2 {
-  background: rgb(167, 110, 231);
-}
-.t-swipe3 {
-  background: rgb(255, 139, 93);
-}
 
 body.hide {
   overflow: hidden;
