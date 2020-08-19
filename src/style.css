@@ -3,7 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+a{
+  text-decoration: none;
+  color: black;
+}
 body {
   background: #17181a;
   font-family: "Montserrat", sans-serif;
@@ -28,8 +31,11 @@ main {
   margin: auto;
   padding: 2rem 0rem;
   z-index: 2;
-  position: relative;
+  
+  
+  position: relative ;
 }
+
 .line1,
 .line2 {
   width: 3rem;
@@ -99,46 +105,69 @@ main {
   cursor: pointer;
 }
 .nav-bar {
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: white;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  flex-wrap: wrap;
+
   z-index: 1;
   opacity: 1;
   clip-path: circle(50px at 100% -10%);
   -webkit-clip-path: circle(50px at 100% -10%);
+  position: fixed;
 }
+
 .burger {
   cursor: pointer;
 }
 .nav-links {
-  font-size: 3rem;
-  flex-basis: 30rem;
-  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+
+  flex: 1 1 30rem;
+  align-items: center;
+  justify-content: center;
+
 }
-.nav-links h3 {
-  padding: 4rem 0rem;
+
+
+.nav-links a ,.contact h1{
+ font-size: 2rem;
+ font-weight: bold;
+ margin-bottom: 3rem;
+ padding: 0.5rem 1rem ;
+ margin-top:1rem;
+
 }
+.nav-links a {
+  border: 0.5px solid rgb(0, 0, 0 ,0.3);
+  border-radius: 5rem;
+  
+  
+ }
 .contact {
-  flex-basis: 30rem;
+  display: flex;
+  flex-direction: column;
+
+  flex: 1 1 30rem;
+  align-items: center;
+  justify-content: center;
 }
-.contact h2 {
+/* .contact h2 {
   font-size: 3rem;
   padding: 2rem 0rem;
-}
-.social h1 {
+} */
+/* .social h1 {
   display: inline;
   font-size: 1.5rem;
   line-height: 2rem;
   padding: 1rem;
   margin: 1rem;
   font-size: 2rem;
-}
+}  */
 
 .reveal-img,
 .reveal-text {
@@ -149,7 +178,6 @@ main {
   left: 0;
   top: -15%;
 }
-
 
 body.hide {
   overflow: hidden;

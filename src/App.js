@@ -6,6 +6,7 @@ import Details from "./detials";
 import ThemeContext from "./ThemeContext";
 import NavBar from "./Navbar";
 import Main from "./component/main"
+import Benfits from "./component/benefit"
 const App = () => {
  
 

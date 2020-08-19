@@ -1,7 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
 import hero from "./img/hero.jpg";
 import { TweenMax } from "gsap";
-
+import { css, keyframes } from "@emotion/core";
+import { motion } from "framer-motion";
 const Main = () => {
   const revealimg = useRef(null);
   const revealtext = useRef(null);
@@ -11,7 +12,27 @@ const Main = () => {
   const line1 = useRef(null);
   const line2 = useRef(null);
   const logo = useRef(null);
- 
+  const variandivlink = {
+  
+  };
+  const variantlink = {
+    hidden: {
+      scale: 1,
+      
+    },
+    visible: {
+      scale: 1.1,
+      textShadow: "0px 0px 8px rgb(241, 240, 234)",
+      boxShadow: "0px 0px 8px rgb(255,255,255)",
+      background:"black",
+      color:"white",
+      transition: {
+        duration: 0.4,
+        yoyo: Infinity
+      }
+     
+    },
+  };
   const [active, setactive] = useState(false);
   useEffect(() => {
     TweenMax.fromTo(
@@ -35,7 +56,7 @@ const Main = () => {
     TweenMax.fromTo(
       burger.current,
       3,
-      { y: "-300%" },
+      { y: "-100%" },
       { y: "0%", ease: "Power2.easeOut" }
     );
   });
@@ -67,12 +88,11 @@ const Main = () => {
         { color: "black", ease: "Power2.easeIn" }
       );
     } else {
-     
       TweenMax.to(
         line2.current,
         -0.25,
 
-        { y: 0,rotate: "0",  background: "white", ease: "Power2.easeOut" }
+        { y: 0, rotate: "0", background: "white", ease: "Power2.easeOut" }
       );
       TweenMax.to(
         logo.current,
@@ -94,16 +114,16 @@ const Main = () => {
       );
     }
   };
-  
+
   return (
     <div>
-      <header className="navbar">
+      <header ref={burger} className="navbar">
         <h1>
           <a ref={logo} href="" id="logo">
             Work.
           </a>
         </h1>
-        <div ref={burger} className="burger" onClick={menubar}>
+        <div className="burger" onClick={menubar}>
           <div ref={line1} className="line1"></div>
           <div ref={line2} className="line2"></div>
         </div>
@@ -129,30 +149,44 @@ const Main = () => {
             <div ref={revealtext} className="reveal-text"></div>
           </div>
         </section>
-        <nav ref={navbar} className="nav-bar">
-          <ul className="nav-links">
-            <h3>تواصل معنا</h3>
-            <h3>المشاريع</h3>
-            <h3>عن الشركة</h3>
-          </ul>
+        <motion.nav ref={navbar} className="nav-bar">
+          <motion.div
+           
+            className="nav-links"
+          >
+            <motion.a variants={variantlink}  initial="hidden"
+             whileHover="visible"
+            href="#">
+              تواصل معنا
+           </motion.a>
+            <motion.a variants={variantlink} initial="hidden"
+             whileHover="visible" href="#">
+              المشاريع
+            </motion.a>
+            <motion.a variants={variantlink} initial="hidden"
+             whileHover="visible" href="#">
+              عن الشركة
+            </motion.a>
+          </motion.div>
+
           <div className="contact">
-            <h2>Stay in touch.</h2>
-            <div className="social">
-              <h1>
-                {" "}
-                <i className="fab fa-facebook"></i>
-              </h1>
-              <h1>
-                {" "}
-                <i className="fab fa-whatsapp-square"></i>
-              </h1>
-              <h1>
-                {" "}
-                <i className="fab fa-twitter"></i>
-              </h1>
-            </div>
+
+
+            <h1>Stay in touch.</h1>
+            <h1>
+              {" "}
+              <i className="fab fa-facebook"></i>
+            </h1>
+            <h1>
+              {" "}
+              <i className="fab fa-whatsapp-square"></i>
+            </h1>
+            <h1>
+              {" "}
+              <i className="fab fa-twitter"></i>
+            </h1>
           </div>
-        </nav>
+        </motion.nav>
       </main>
     </div>
   );
